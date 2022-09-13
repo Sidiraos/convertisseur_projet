@@ -1,7 +1,7 @@
 
 
 def demander_type_conversion_User() :
-    number_str = input ("1-pouces --> cm \n2-cm --> pouces \n--> ")
+    number_str = input ("1-pouces --> cm\n2-cm --> pouces\n--> ")
     try :
         number_int = int(number_str)
     except:
@@ -18,7 +18,6 @@ def demander_type_conversion_User() :
             print('cm --> pouces')
             return number_int
 
-
 def obtenir_nombre_convertir(number_int):
     if number_int == 1 :
         nombre_convert_str = input('entrez le nombre de pouces\n--> ')
@@ -28,9 +27,7 @@ def obtenir_nombre_convertir(number_int):
         nombre_convert_str = input('entrez le nombre de cm\n--> ')
         return nombre_convert_str
 
-
 def conversion (number_for_convert_str , number_int) :
-    
     try :
        number_for_convert = float(number_for_convert_str)
        #number_for_convert = int (number_for_convert_float) 
@@ -48,13 +45,20 @@ def conversion (number_for_convert_str , number_int) :
             return afficher_resultat
 
 
+def convertir() :
+    while True :
+        number_for_convert_str = obtenir_nombre_convertir(number_int) #obtenir le nombre à convertir
+        if number_for_convert_str == "":
+            return
+        resultat = conversion(number_for_convert_str , number_int) #retourner le resultat obtenu convertion
+        print(resultat)
+
 
 print("Bienvenue dans le programme de Convertion pouces vers cm ou \n cm vers pouces")
 print("Que Souhaitez vous convertir ? \n'Entrez 1 ou 2 selon la conversion de votre choix'")
 print()
 number_int = demander_type_conversion_User() # pouces en cm ou cm en pouces
 print()
-number_for_convert_str = obtenir_nombre_convertir(number_int) #obtenir le nombre à convertir
-resultat = conversion(number_for_convert_str , number_int) #retourner le resultat obtenu convertion
-print(resultat)
+
+convertir()
 
